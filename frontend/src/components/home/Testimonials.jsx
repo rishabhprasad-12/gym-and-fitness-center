@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import SectionDivider from "../common/SectionDivider";
 
 const reviews = [
   {
@@ -72,7 +73,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+      <SectionDivider />
     </section>
   );
 };

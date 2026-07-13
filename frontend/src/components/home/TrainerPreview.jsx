@@ -1,9 +1,10 @@
 import { Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import trainer1 from "../../assets/images/trainer1.jpg";
-import trainer2 from "../../assets/images/trainer2.jpg";
-import trainer3 from "../../assets/images/trainer3.jpg";
+import trainer1 from "../../assets/images/trainer/trainer1.jpg";
+import trainer2 from "../../assets/images/trainer/trainer2.jpg";
+import trainer3 from "../../assets/images/trainer/trainer3.jpg";
+import SectionDivider from "../common/SectionDivider";
 
 const trainers = [
   {
@@ -113,7 +114,7 @@ const TrainerPreview = () => {
           </Link>
         </div>
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+          <SectionDivider />
     </section>
   );
 };

@@ -1,4 +1,5 @@
 import StatsCard from "../cards/StatsCard";
+import SectionDivider from "../common/SectionDivider";
 
 const Statistics = () => {
   return (
@@ -23,7 +24,7 @@ const Statistics = () => {
         {/* Stats Card */}
         <StatsCard />
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+     <SectionDivider />
     </section>
   );
 };

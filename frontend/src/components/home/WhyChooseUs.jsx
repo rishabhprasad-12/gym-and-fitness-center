@@ -1,5 +1,6 @@
 import { Dumbbell, BadgeCheck, HeartPulse, ArrowRight } from "lucide-react";
-import whyChooseUs from "../../assets/images/whyChooseUs.jpg";
+import whyChooseUs from "../../assets/images/home/whyChooseUs.jpg";
+import SectionDivider from "../common/SectionDivider";
 
 const features = [
   {
@@ -98,7 +99,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+      <SectionDivider />
     </section>
   );
 };

@@ -1,5 +1,6 @@
 import { Check, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
+import SectionDivider from "../common/SectionDivider";
 
 const plans = [
   {
@@ -135,7 +136,7 @@ const MembershipPreview = () => {
           <span>✓ 7-Day Free Trial</span>
         </div>
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+      <SectionDivider />
     </section>
   );
 };

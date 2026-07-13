@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import heroImage from "../../assets/images/hero.png";
+import heroImage from "../../assets/images/home/hero.png";
 import StatsCard from "../cards/StatsCard";
+import SectionDivider from "../common/SectionDivider";
 
 const Hero = () => {
   return (
@@ -13,11 +14,11 @@ const Hero = () => {
 
       {/* Background Text */}
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center select-none">
-        <h1 className="text-[70px] font-black uppercase tracking-[12px] text-white/[0.05] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[220px]">
+        <h1 className="text-[70px] font-black uppercase tracking-[12px] text-white/[0.05] sm:text-[150px] md:text-[165px] lg:text-[180px] xl:text-[220px]">
           FIT
         </h1>
 
-        <h1 className="mt-8 text-[70px] font-black uppercase tracking-[12px] text-lime-500/80 sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[220px]">
+        <h1 className="mt-8 text-[70px] font-black uppercase tracking-[12px] text-lime-500/80 sm:text-[150px] md:text-[165px] lg:text-[180px] xl:text-[220px]">
           FORGE
         </h1>
       </div>
@@ -29,7 +30,7 @@ const Hero = () => {
         </span>
 
         {/* Heading */}
-        <h2 className="mt-6 max-w-5xl text-4xl font-black uppercase leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h2 className="mt-6 max-w-5xl text-5xl font-black uppercase leading-tight text-white md:text-7xl lg:text-8xl">
           Build Your
           <span className="block text-lime-400">Dream Body</span>
         </h2>
@@ -97,7 +98,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+      <SectionDivider />
     </section>
   );
 };

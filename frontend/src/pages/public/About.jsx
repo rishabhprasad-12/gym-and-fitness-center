@@ -1,9 +1,21 @@
 import React from 'react'
 
+import Hero from '../../components/about/Hero';
+import OurStory from '../../components/about/OurStory';
+import MissionVision from '../../components/about/MissionVission';
+import Facilities from '../../components/about/Facilities';
+import WhyChooseUs from '../../components/about/WhyChooseUs';
+import CTA from "../../components/home/CTA";
+
 const About = () => {
   return (
     <div>
-      About
+      <Hero />
+      <OurStory />
+      <MissionVision />
+      <Facilities />
+      <WhyChooseUs />
+      <CTA />
     </div>
   )
 }
