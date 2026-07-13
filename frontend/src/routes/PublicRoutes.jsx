@@ -8,6 +8,7 @@ import Contact from "../pages/public/Contact";
 import Membership from "../pages/public/Membership";
 import Schedule from "../pages/public/Schedule";
 import Trainers from "../pages/public/Trainers";
+import Dashboard from "../pages/dashboard/Dashboard";
 
 const routes = [
   {
@@ -16,6 +17,10 @@ const routes = [
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
         path: "/about",
