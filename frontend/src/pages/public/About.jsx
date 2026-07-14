@@ -5,7 +5,7 @@ import OurStory from '../../components/about/OurStory';
 import MissionVision from '../../components/about/MissionVission';
 import Facilities from '../../components/about/Facilities';
 import WhyChooseUs from '../../components/about/WhyChooseUs';
-import CTA from "../../components/home/CTA";
+import CTA from "../../components/common/CTA";
 
 const About = () => {
   return (

@@ -7,7 +7,7 @@ import MembershipPreview from '../../components/home/MembershipPreview'
 import TrainerPreview from '../../components/home/TrainerPreview'
 import SchedulePreview from '../../components/home/SchedulePreview'
 import Testimonials from '../../components/home/Testimonials'
-import CTA from '../../components/home/CTA'
+import CTA from '../../components/common/CTA'
 import HeroMarquee from '../../components/home/HeroMarquee'
 
 const Home = () => {

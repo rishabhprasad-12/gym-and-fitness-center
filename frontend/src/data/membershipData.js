@@ -1,0 +1,55 @@
+export const membershipPlans = [
+  {
+    id: 1,
+    title: "Basic",
+    price: 999,
+    duration: "1 Month",
+    popular: false,
+    features: [
+      { name: "Gym Access", available: true },
+      { name: "Cardio Area", available: true },
+      { name: "Locker Access", available: true },
+      { name: "Group Classes", available: false },
+      { name: "Personal Trainer", available: false },
+      { name: "Nutrition Plan", available: false },
+      { name: "Unlimited Access", available: false },
+      { name: "Priority Support", available: false },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Premium",
+    price: 1999,
+    duration: "3 Months",
+    popular: true,
+    features: [
+      { name: "Gym Access", available: true },
+      { name: "Cardio Area", available: true },
+      { name: "Locker Access", available: true },
+      { name: "Group Classes", available: true },
+      { name: "Personal Trainer", available: true },
+      { name: "Nutrition Plan", available: true },
+      { name: "Unlimited Access", available: false },
+      { name: "Priority Support", available: false },
+    ],
+  },
+
+  {
+    id: 3,
+    title: "Elite",
+    price: 4999,
+    duration: "12 Months",
+    popular: false,
+    features: [
+      { name: "Gym Access", available: true },
+      { name: "Cardio Area", available: true },
+      { name: "Locker Access", available: true },
+      { name: "Group Classes", available: true },
+      { name: "Personal Trainer", available: true },
+      { name: "Nutrition Plan", available: true },
+      { name: "Unlimited Access", available: true },
+      { name: "Priority Support", available: true },
+    ],
+  },
+];
