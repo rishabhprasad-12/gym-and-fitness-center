@@ -17,7 +17,7 @@ const Hero = () => {
         </span>
 
         {/* Heading */}
-        <h1 className="mt-6 text-5xl font-bold leading-tight uppercase text-white md:text-7xl lg:text-8xl xl:text-9xl">
+        <h1 className="mt-6 text-5xl font-extrabold leading-tight uppercase text-white md:text-7xl lg:text-8xl">
           Find The Perfect Workout
         </h1>
 
@@ -63,22 +63,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Mobile Card */}
-        {/* <div className="mt-6 w-full max-w-xs rounded-3xl border border-white/10 bg-zinc-900/70 p-5 backdrop-blur-xl lg:hidden">
-          <div className="flex items-center justify-center gap-2">
-            <Flame className="text-lime-400" size={18} />
-            <span className="text-sm font-semibold text-lime-400">
-              Today's Class
-            </span>
-          </div>
-
-          <h3 className="mt-3 text-2xl font-bold text-white">HIIT Training</h3>
-
-          <p className="mt-2 text-zinc-400">7:00 AM • Rahul Singh</p>
-        </div> */}
-
         {/* Bottom Text */}
-        <h2 className="-mt-6 text-center text-5xl font-black uppercase leading-none text-lime-400 md:text-7xl lg:text-8xl xl:text-9xl">
+        <h2 className="-mt-6 text-center text-5xl font-black uppercase leading-none text-lime-400 md:text-7xl lg:text-8xl">
           For Every Day
         </h2>
 

@@ -49,7 +49,7 @@ const Hero = () => {
         </div>
 
         {/* Bottom Heading */}
-        <h2 className="-mt-6 text-center z-30 text-5xl font-black uppercase leading-none text-lime-400 md:text-7xl lg:text-8xl xl:text-9xl">
+        <h2 className="-mt-6 text-center z-30 text-5xl font-black uppercase leading-none text-lime-400 md:text-7xl lg:text-8xl">
           Behind Every Transformation
         </h2>
 

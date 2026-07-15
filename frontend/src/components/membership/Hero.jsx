@@ -55,8 +55,8 @@ const Hero = () => {
         </div>
 
         {/* Bottom Heading */}
-        <h1 className="-mt-10 text-5xl font-extrabold uppercase tracking-tight text-white md:text-7xl lg:text-8xl">
-          <span className="text-lime-400">That Fits Your Goals.</span>
+        <h1 className="-mt-10 text-5xl font-extrabold uppercase tracking-tight text-lime-400 md:text-7xl lg:text-8xl">
+          That Fits Your Goals.
         </h1>
 
         {/* Description */}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FAQItem from "./FAQItem";
+import FAQItem from "../common/FAQItem";
 import { faqData } from "../../data/membership/faqData";
 import SectionDivider from "../common/SectionDivider";
 
