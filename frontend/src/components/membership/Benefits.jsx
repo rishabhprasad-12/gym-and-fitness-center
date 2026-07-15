@@ -1,6 +1,6 @@
 import benefitsImage from "../../assets/images/membership/benefits.jpg";
 
-import { membershipBenefits } from "../../data/membershipBenefits";
+import { membershipBenefits } from "../../data/membership/membershipBenefits";
 import SectionDivider from "../common/SectionDivider";
 
 const Benefits = () => {

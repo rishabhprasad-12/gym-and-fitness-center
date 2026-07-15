@@ -1,4 +1,4 @@
-import { membershipPlans } from "../../data/membershipData";
+import { membershipPlans } from "../../data/membership/membershipData";
 import PricingCard from "../cards/PricingCard"
 import SectionDivider from "../common/SectionDivider";
 

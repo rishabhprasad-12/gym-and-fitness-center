@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import FAQItem from "./FAQItem";
-import { faqData } from "../../data/faqData";
+import { faqData } from "../../data/membership/faqData";
 import SectionDivider from "../common/SectionDivider";
 
 const FAQ = () => {

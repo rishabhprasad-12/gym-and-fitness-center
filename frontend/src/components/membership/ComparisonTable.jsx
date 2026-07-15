@@ -1,5 +1,5 @@
 import { Check, X } from "lucide-react";
-import { comparisonData } from "../../data/comparisonData";
+import { comparisonData } from "../../data/membership/comparisonData";
 import SectionDivider from "../common/SectionDivider";
 
 const ComparisonTable = () => {

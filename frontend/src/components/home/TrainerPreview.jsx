@@ -1,15 +1,15 @@
 import { Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import trainer1 from "../../assets/images/trainer/trainer1.jpg";
-import trainer2 from "../../assets/images/trainer/trainer2.jpg";
-import trainer3 from "../../assets/images/trainer/trainer3.jpg";
+import trainer1 from "../../assets/images/trainers/aman.jpg";
+import trainer2 from "../../assets/images/trainers/priya.jpg";
+import trainer3 from "../../assets/images/trainers/rahul.jpg";
 import SectionDivider from "../common/SectionDivider";
 
 const trainers = [
   {
     id: 1,
-    name: "Alex Morgan",
+    name: "Aman Verma",
     role: "Strength Coach",
     experience: "8 Years Experience",
     image: trainer1,
@@ -17,7 +17,7 @@ const trainers = [
   },
   {
     id: 2,
-    name: "Sarah Lee",
+    name: "Priya Sharma",
     role: "Yoga Instructor",
     experience: "6 Years Experience",
     image: trainer2,
@@ -25,7 +25,7 @@ const trainers = [
   },
   {
     id: 3,
-    name: "John Carter",
+    name: "Neha Kapoor",
     role: "Cardio Specialist",
     experience: "10 Years Experience",
     image: trainer3,
