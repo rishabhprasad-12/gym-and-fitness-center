@@ -8,7 +8,9 @@ import Contact from "../pages/public/Contact";
 import Membership from "../pages/public/Membership";
 import Schedule from "../pages/public/Schedule";
 import Trainers from "../pages/public/Trainers";
-import Dashboard from "../pages/dashboard/Dashboard";
+import Dashboard from "../pages/dashboard/CustomerDashboard";
+import Login from "../pages/auth/Login";
+import Register from "../pages/auth/Register";
 
 const routes = [
   {
@@ -17,10 +19,6 @@ const routes = [
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
       },
       {
         path: "/about",
@@ -43,6 +41,18 @@ const routes = [
         element: <Schedule />,
       },
     ],
+  },
+  {
+    path: "/auth/login",
+    element: <Login />,
+  },
+  {
+    path: "/auth/register",
+    element: <Register />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ];
 

@@ -30,3 +30,14 @@
 .animate-marquee-left-slow {
   animation: marquee-left 38s linear infinite;
 }
+
+/* hide scrollbar for dashboard sidebar */
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -5,8 +5,8 @@ export const contactInfo = [
     id: 1,
     icon: MapPin,
     title: "Visit Us",
-    value: "Main Road, Ranchi",
-    description: "Jharkhand, India",
+    value: "Main Road, Guwahati",
+    description: "Assam, India",
   },
   {
     id: 2,

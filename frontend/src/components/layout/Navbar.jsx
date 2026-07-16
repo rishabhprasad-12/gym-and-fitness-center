@@ -45,14 +45,14 @@ const Navbar = () => {
         {/* Desktop Buttons */}
         <div className="hidden items-center gap-4 lg:flex">
           <NavLink
-            to="/login"
+            to="/auth/login"
             className="text-zinc-300 hover:text-lime-400 transition-colors"
           >
             Login
           </NavLink>
 
           <NavLink
-            to="/register"
+            to="/auth/register"
             className="rounded-xl bg-lime-400 px-5 py-2 font-medium text-black transition hover:scale-105 hover:bg-lime-500"
           >
             Join Now
@@ -97,7 +97,7 @@ const Navbar = () => {
 
           <div className="mt-6 flex flex-col gap-3">
             <NavLink
-              to="/login"
+              to="/auth/login"
               onClick={() => setIsMenuOpen(false)}
               className="rounded-xl border border-zinc-700 py-2 text-center text-white"
             >
@@ -105,7 +105,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/register"
+              to="/auth/register"
               onClick={() => setIsMenuOpen(false)}
               className="rounded-xl bg-lime-400 py-2 text-center font-medium text-black"
             >

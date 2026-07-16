@@ -63,12 +63,7 @@ const Guidelines = () => {
             return (
               <div
                 key={item.title}
-                className={`group rounded-3xl border border-white/10 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/30
-                ${
-                  index % 2 === 0
-                    ? "bg-gradient-to-br from-zinc-900 via-zinc-950 to-black"
-                    : "bg-gradient-to-br from-lime-400/10 via-zinc-900 to-black"
-                }`}
+                className="group rounded-3xl border border-white/10 p-8 bg-zinc-900 transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/30"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-lime-400/10 text-lime-400 transition duration-300 group-hover:scale-110">
                   <Icon size={30} />

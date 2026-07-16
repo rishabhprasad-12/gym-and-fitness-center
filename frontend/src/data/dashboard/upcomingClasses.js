@@ -1,0 +1,32 @@
+export const upcomingClasses = [
+  {
+    id: 1,
+    day: "Monday",
+    className: "HIIT Training",
+    trainer: "Rahul Singh",
+    time: "7:00 AM",
+    duration: "60 Minutes",
+    seats: 20,
+    color: "bg-green-500",
+  },
+  {
+    id: 2,
+    day: "Wednesday",
+    className: "Yoga",
+    trainer: "Priya Sharma",
+    time: "8:00 AM",
+    duration: "45 Minutes",
+    seats: 15,
+    color: "bg-sky-500",
+  },
+  {
+    id: 3,
+    day: "Friday",
+    className: "Strength Training",
+    trainer: "Rohit Kumar",
+    time: "6:30 AM",
+    duration: "60 Minutes",
+    seats: 18,
+    color: "bg-orange-500",
+  },
+];
