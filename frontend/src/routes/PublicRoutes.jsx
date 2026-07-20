@@ -1,5 +1,3 @@
-import { useRoutes } from "react-router-dom";
-
 import MainLayout from "../layouts/MainLayout";
 
 import Home from "../pages/public/Home";
@@ -11,8 +9,9 @@ import Trainers from "../pages/public/Trainers";
 import Dashboard from "../pages/dashboard/CustomerDashboard";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+import AdminDashboard from "../pages/admin/AdminDashboard";
 
-const routes = [
+const PublicRoutes = [
   {
     element: <MainLayout />,
     children: [
@@ -50,12 +49,14 @@ const routes = [
     path: "/auth/register",
     element: <Register />,
   },
-  {
-    path: "/dashboard",
-    element: <Dashboard />,
-  },
+  // {
+  //   path: "/dashboard",
+  //   element: <Dashboard />,
+  // },
+  // {
+  //   path: "/admin",
+  //   element: <AdminDashboard />,
+  // },
 ];
 
-export default function PublicRoutes() {
-  return useRoutes(routes);
-}
+export default PublicRoutes;

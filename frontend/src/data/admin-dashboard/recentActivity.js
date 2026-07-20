@@ -1,0 +1,55 @@
+import {
+  UserPlus,
+  CalendarDays,
+  MessageSquare,
+  CreditCard,
+  UserCog,
+} from "lucide-react";
+
+export const recentActivity = [
+  {
+    id: 1,
+    title: "New Premium Membership",
+    description: "Amit Kumar joined the Premium plan.",
+    time: "2 min ago",
+    icon: UserPlus,
+    color: "text-lime-400",
+    bg: "bg-lime-400/10",
+  },
+  {
+    id: 2,
+    title: "Schedule Updated",
+    description: "Rahul Singh modified the HIIT class timing.",
+    time: "18 min ago",
+    icon: CalendarDays,
+    color: "text-sky-400",
+    bg: "bg-sky-400/10",
+  },
+  {
+    id: 3,
+    title: "New Enquiry",
+    description: "Priya Sharma requested a trial session.",
+    time: "1 hour ago",
+    icon: MessageSquare,
+    color: "text-orange-400",
+    bg: "bg-orange-400/10",
+  },
+  {
+    id: 4,
+    title: "Membership Renewed",
+    description: "Rohit Kumar renewed Elite membership.",
+    time: "3 hours ago",
+    icon: CreditCard,
+    color: "text-pink-400",
+    bg: "bg-pink-400/10",
+  },
+  {
+    id: 5,
+    title: "Trainer Profile Updated",
+    description: "Neha Kapoor updated certifications.",
+    time: "Yesterday",
+    icon: UserCog,
+    color: "text-violet-400",
+    bg: "bg-violet-400/10",
+  },
+];

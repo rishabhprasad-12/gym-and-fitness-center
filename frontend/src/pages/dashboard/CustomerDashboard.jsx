@@ -14,7 +14,7 @@ import TodayProgress from "../../components/dashboard/TodayProgress";
 
 const CustomerDashboard = () => {
   return (
-    <DashboardLayout>
+    <>
       <WelcomeBanner />
 
       {/* Stats */}
@@ -52,7 +52,7 @@ const CustomerDashboard = () => {
       <section className="mt-8">
         <RecentActivity />
       </section>
-    </DashboardLayout>
+    </>
   );
 };
 
