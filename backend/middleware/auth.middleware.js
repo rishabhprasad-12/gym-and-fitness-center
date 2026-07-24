@@ -4,7 +4,7 @@ import ApiError from "../utils/ApiError.js";
 import asyncHandler from "./asyncHandler.js";
 
 const authMiddleware = asyncHandler(async (req, res, next) => {
-    const authHeader = req.header.authorization;
+    const authHeader = req.headers.authorization;
 
     if(!authHeader || !authHeader.startsWith("Bearer")) {
         throw new ApiError(401, "Unauthorized. Token missing");
