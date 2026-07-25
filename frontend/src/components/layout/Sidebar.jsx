@@ -5,6 +5,7 @@ import SidebarItem from "../dashboard/SidebarItem";
 import { sidebarMenu, accountMenu } from "../../data/dashboard/sidebarMenu";
 
 const Sidebar = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
   return (
     <aside className="sticky top-0 hidden h-screen overflow-y-auto hide-scrollbar w-64 border-r border-zinc-800 bg-zinc-900 lg:flex lg:flex-col">
       {/* Logo */}
@@ -17,7 +18,7 @@ const Sidebar = () => {
         <div>
           <h2 className="text-xl font-bold text-white">FitForge</h2>
 
-          <p className="text-xs text-zinc-500">Customer Dashboard</p>
+          <p className="text-xs text-zinc-500">{user.role !== "admin" ? "Customer Dashboard" : "Admin Dashboard"}</p>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   User,
   Mail,
@@ -10,8 +10,13 @@ import {
   UserPlus,
 //   Chrome,
 } from "lucide-react";
+import { registerUser } from "../../services/auth.service";
+
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -33,28 +38,34 @@ const RegisterForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password.length < 6) {
-      alert("Password should be at least 6 characters.");
+      toast.error("Password should be at least 6 characters.");
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match.");
+      toast.error("Passwords do not match.");
       return;
     }
 
     if (!formData.agree) {
-      alert("Please accept Terms & Conditions.");
+      toast.error("Please accept Terms & Conditions.");
       return;
     }
 
     console.log(formData);
 
-    // Later
-    // axios.post("/api/auth/register", formData)
+    try {
+      const response = await registerUser(formData);
+      localStorage.setItem("token", response.data.token);
+      toast.success(response.message);
+      navigate("/dashboard");
+    } catch (err) {
+      toast.error(err.response?.data?.message);
+    }
   };
 
   return (

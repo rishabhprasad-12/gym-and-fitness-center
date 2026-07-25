@@ -1,8 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff, LogIn } from "lucide-react";
+import { loginUser } from "../../services/auth.service";
+
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  
   const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -20,10 +25,29 @@ const LoginForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log(formData);
+
+    try {
+      const response = await loginUser(formData);
+      localStorage.setItem("token", response.data.token);
+
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      toast.success(response.message);
+
+      const role = response.data.user.role;
+
+      if (role === "customer") {
+        navigate("/dashboard");
+      } else {
+        navigate("/admin/dashboard");
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Login Failed");
+    }
   };
 
   return (

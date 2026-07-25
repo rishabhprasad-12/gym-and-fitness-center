@@ -1,6 +1,8 @@
 import { Bell } from "lucide-react";
 
 const Topbar = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-xl">
       <div className="flex items-center justify-between px-8 py-5">
@@ -23,9 +25,9 @@ const Topbar = () => {
             />
 
             <div>
-              <h3 className="font-semibold text-white">Ayush</h3>
+              <h3 className="font-semibold text-white">{user.name}</h3>
 
-              <p className="text-xs text-zinc-500">Premium Member</p>
+              <p className="text-xs text-zinc-500">{user.role !== "admin"? "Premium Membership": "Admin Portal"}</p>
             </div>
           </div>
         </div>
