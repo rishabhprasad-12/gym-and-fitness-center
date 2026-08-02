@@ -2,13 +2,16 @@ import {
   LayoutDashboard,
   User,
   CreditCard,
+  NotebookPen,
   CalendarDays,
   MessageSquare,
+  IdCardLanyard,
+  CircleQuestionMark,
   Settings,
   LogOut,
 } from "lucide-react";
 
-export const sidebarMenu = [
+export const customerSidebarMenu = [
   {
     title: "Dashboard",
     icon: LayoutDashboard,
@@ -36,6 +39,34 @@ export const sidebarMenu = [
   },
 ];
 
+export const adminSidebarMenu = [
+  {
+    title: "Dashboard",
+    icon: LayoutDashboard,
+    path: "/admin/dashboard",
+  },
+  {
+    title: "Manage Plans",
+    icon: NotebookPen,
+    path: "/admin/manage-plans",
+  },
+  {
+    title: "Manage Trainers",
+    icon: IdCardLanyard,
+    path: "/dashboard/manege-trainers",
+  },
+  {
+    title: "Manage Schedule",
+    icon: CalendarDays,
+    path: "/dashboard/menage-schedule",
+  },
+  {
+    title: "View Enquires",
+    icon: CircleQuestionMark,
+    path: "/dashboard/view-enquires",
+  },
+];
+ 
 export const accountMenu = [
   {
     title: "Settings",

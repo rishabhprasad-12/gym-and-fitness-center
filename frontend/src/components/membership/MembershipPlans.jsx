@@ -2,7 +2,9 @@ import { membershipPlans } from "../../data/membership/membershipData";
 import PricingCard from "../cards/PricingCard"
 import SectionDivider from "../common/SectionDivider";
 
-const PricingCards = () => {
+const MembershipPlans = ({ plans }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  
   return (
     <section className="bg-gradient-to-b from-zinc-950 to-zinc-900">
       <div className="mx-auto max-w-7xl px-6 py-24">
@@ -25,8 +27,8 @@ const PricingCards = () => {
 
         {/* Cards */}
         <div className="grid gap-8 lg:grid-cols-3">
-          {membershipPlans.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+          {plans.map((plan) => (
+            <PricingCard key={plan._id} plan={plan} />
           ))}
         </div>
       </div>
@@ -35,4 +37,4 @@ const PricingCards = () => {
   );
 };
 
-export default PricingCards;
+export default MembershipPlans;

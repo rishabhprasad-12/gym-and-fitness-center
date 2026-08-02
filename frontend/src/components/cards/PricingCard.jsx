@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Check, X, ArrowRight } from "lucide-react";
 
 const PricingCard = ({ plan }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  
   return (
     <div
       className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 ${

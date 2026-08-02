@@ -2,7 +2,11 @@ import { Dumbbell } from "lucide-react";
 
 import SidebarItem from "../dashboard/SidebarItem";
 
-import { sidebarMenu, accountMenu } from "../../data/dashboard/sidebarMenu";
+import {
+  customerSidebarMenu,
+  adminSidebarMenu,
+  accountMenu,
+} from "../../data/dashboard/sidebarMenu";
 
 const Sidebar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -18,7 +22,9 @@ const Sidebar = () => {
         <div>
           <h2 className="text-xl font-bold text-white">FitForge</h2>
 
-          <p className="text-xs text-zinc-500">{user.role !== "admin" ? "Customer Dashboard" : "Admin Dashboard"}</p>
+          <p className="text-xs text-zinc-500">
+            {user.role !== "admin" ? "Customer Dashboard" : "Admin Dashboard"}
+          </p>
         </div>
       </div>
 
@@ -29,9 +35,13 @@ const Sidebar = () => {
           Main
         </p>
 
-        {sidebarMenu.map((item) => (
-          <SidebarItem key={item.title} item={item} />
-        ))}
+        {user.role !== "admin"
+          ? customerSidebarMenu.map((item) => (
+              <SidebarItem key={item.title} item={item} />
+            ))
+          : adminSidebarMenu.map((item) => (
+              <SidebarItem key={item.title} item={item} />
+            ))}
 
         <p className="mb-3 mt-8 text-xs font-semibold uppercase tracking-widest text-zinc-500">
           Account
