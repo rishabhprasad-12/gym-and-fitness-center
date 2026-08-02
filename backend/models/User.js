@@ -3,7 +3,7 @@ import { USER_ROLES } from "../utils/constants.js";
 
 const userSchema = new mongoose.Schema(
   {
-    name: {
+    fullName: {
       type: String,
       required: true,
       trim: true,

@@ -7,9 +7,9 @@ import asyncHandler from "../middleware/asyncHandler.js";
 
 // register
 export const register = asyncHandler(async (req, res) => {
-  const { name, email, phone, password } = req.body;
+  const { fullName, email, phone, password } = req.body;
 
-  if (!name || !email || !phone || !password) {
+  if (!fullName || !email || !phone || !password) {
     throw new ApiError(400, "All fields are required");
   }
 
@@ -22,7 +22,7 @@ export const register = asyncHandler(async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const user = await User.create({
-    name,
+    fullName,
     email,
     phone,
     password: hashedPassword,
@@ -31,7 +31,7 @@ export const register = asyncHandler(async (req, res) => {
   const userData = user.toObject();
   delete userData.password;
 
-  const token = generateToken(user._id, user.role);
+  const token = generateToken(user.id, user.role);
 
   res.status(201).json(
     new ApiResponse(201, "User registered successfully", {
@@ -65,7 +65,7 @@ export const login = asyncHandler(async (req, res) => {
   const userData = user.toObject();
   delete userData.password;
 
-  const token = generateToken(user._id, user.role);
+  const token = generateToken(user.id, user.role);
 
   res.status(200).json(
     new ApiResponse(200, "Login successful", {

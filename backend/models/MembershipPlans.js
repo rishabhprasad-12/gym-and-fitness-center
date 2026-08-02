@@ -1,8 +1,23 @@
 import mongoose from "mongoose";
 
-const membershipPlanSchema = new mongoose.Schema(
+const featureSchema = new mongoose.Schema(
   {
     name: {
+      type: String,
+      required: true,
+    },
+    available: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  },
+  { _id: false },
+);
+
+const membershipPlanSchema = new mongoose.Schema(
+  {
+    title: {
       type: String,
       required: true,
       trim: true,
@@ -20,11 +35,7 @@ const membershipPlanSchema = new mongoose.Schema(
       min: 1,
     },
 
-    features: {
-      type: [String],
-      required: true,
-      default: [],
-    },
+    features: [featureSchema],
 
     description: {
       type: String,
