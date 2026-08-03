@@ -17,7 +17,7 @@ export const getAllMembershipPlans = asyncHandler(async (req, res) => {
     );
 });
 
-export const getMembershipById = asyncHandler(async (req, res) => {
+export const getMembershipPlanById = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   const membershipPlan = await MembershipPlan.findById(id);

@@ -3,7 +3,7 @@ import {
   createMembershipPlan,
   deleteMembershipPlan,
   getAllMembershipPlans,
-  getMembershipById,
+  getMembershipPlanById,
   updateMembershipPlan,
 } from "../controllers/membershipPlan.controller.js";
 import authMiddleware from "../middleware/auth.middleware.js";
@@ -17,7 +17,7 @@ router
   .post(authMiddleware, authorize("admin"), createMembershipPlan);
 router
   .route("/:id")
-  .get(getMembershipById)
+  .get(getMembershipPlanById)
   .put(authMiddleware, authorize("admin"), updateMembershipPlan)
   .delete(authMiddleware, authorize("admin"), deleteMembershipPlan);
 
