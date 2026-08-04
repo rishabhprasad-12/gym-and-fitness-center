@@ -1,14 +1,16 @@
 import Trainer from "../models/Trainer.js";
 import asyncHandler from "../middleware/asyncHandler.js";
-import ApiError from "../utils/ApiResponse.js";
+import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 
 export const getAllTrainers = asyncHandler(async (req, res) => {
-  const trainer = await Trainer.find();
+  const trainers = await Trainer.find({
+    isActive: true
+  });
 
   res
     .status(200)
-    .json(new ApiResponse(200, "Trainers fetched successfully", trainer));
+    .json(new ApiResponse(200, "Trainers fetched successfully", trainers));
 });
 
 export const getTrainerById = asyncHandler(async (req, res) => {
@@ -41,6 +43,12 @@ export const createTrainer = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Name, specialization and experience are required");
   }
 
+  const existingTrainer = await Trainer.findOne({ email });
+
+  if (existingTrainer) {
+    throw new ApiError(400, "Trainer already exists");
+  }
+
   const trainer = await Trainer.create({
     name,
     email,
@@ -53,8 +61,8 @@ export const createTrainer = asyncHandler(async (req, res) => {
   });
 
   res
-    .status(200)
-    .json(new ApiResponse(200, "New trainer added successfully", trainer));
+    .status(201)
+    .json(new ApiResponse(201, "New trainer added successfully", trainer));
 });
 
 export const updateTrainer = asyncHandler(async (req, res) => {
