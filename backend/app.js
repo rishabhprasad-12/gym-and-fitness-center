@@ -14,6 +14,7 @@ import membershipPlanRoutes from "./routes/membershipPlan.routes.js";
 import trainerRoutes from "./routes/trainer.routes.js";
 import classScheduleRoutes from "./routes/classSchedule.routes.js";
 import membershipRegistrationRoutes from "./routes/membershipRegistration.routes.js"
+import enquiryRoutes from "./routes/enquiry.routes.js";
 
 import errorMiddleware from "./middleware/errorMiddleware.js";
 
@@ -23,10 +24,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/membership-plan", membershipPlanRoutes);
-app.use("/api/trainer", trainerRoutes);
-app.use("/api/class-schedule", classScheduleRoutes);
-app.use("/api/membership-registration", membershipRegistrationRoutes)
+app.use("/api/membership-plans", membershipPlanRoutes);
+app.use("/api/trainers", trainerRoutes);
+app.use("/api/class-schedules", classScheduleRoutes);
+app.use("/api/membership-registrations", membershipRegistrationRoutes)
+app.use("/api/enquires", enquiryRoutes)
 
 app.use(errorMiddleware);
 
