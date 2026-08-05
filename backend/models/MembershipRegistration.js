@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { PAYMENT_STATUS, MEMBERSHIP_STATUS } from "../utils/constants";
+import { PAYMENT_STATUS, MEMBERSHIP_STATUS } from "../utils/constants.js";
 
 const membershipRegistrationSchema = new mongoose.Schema(
   {

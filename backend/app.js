@@ -13,6 +13,7 @@ import authRoutes from "./routes/auth.route.js";
 import membershipPlanRoutes from "./routes/membershipPlan.routes.js";
 import trainerRoutes from "./routes/trainer.routes.js";
 import classScheduleRoutes from "./routes/classSchedule.routes.js";
+import membershipRegistrationRoutes from "./routes/membershipRegistration.routes.js"
 
 import errorMiddleware from "./middleware/errorMiddleware.js";
 
@@ -22,18 +23,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/membership-plans", membershipPlanRoutes);
-app.use("/api/trainers", trainerRoutes);
-app.use("/api/class-schedule", classScheduleRoutes)
+app.use("/api/membership-plan", membershipPlanRoutes);
+app.use("/api/trainer", trainerRoutes);
+app.use("/api/class-schedule", classScheduleRoutes);
+app.use("/api/membership-registration", membershipRegistrationRoutes)
 
 app.use(errorMiddleware);
-
-// app.get("/", (req, res) => {
-//     res.send({
-//         success: true,
-//         message: "GET route is working",
-//     })
-// })
 
 const PORT = process.env.PORT || 5000;
 

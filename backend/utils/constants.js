@@ -2,6 +2,6 @@ export const USER_ROLES = ["customer", "admin"];
 
 export const ENQUIRY_STATUS = ["pending", "resolved"];
 
-export const PAYMENT_STATUS = ["pending", "paid", "failed"];
+export const PAYMENT_STATUS = ["pending", "paid", "failed", "refunded"];
 
-export const MEMBERSHIP_STATUS = ["active", "expired", "cancelled"];
+export const MEMBERSHIP_STATUS = ["pending" ,"active", "expired", "cancelled"];

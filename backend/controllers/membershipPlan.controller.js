@@ -1,4 +1,4 @@
-import MembershipPlan from "../models/MembershipPlans.js";
+import MembershipPlan from "../models/MembershipPlan.js";
 import asyncHandler from "../middleware/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
