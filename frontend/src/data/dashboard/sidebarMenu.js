@@ -63,7 +63,7 @@ export const adminSidebarMenu = [
   {
     title: "Manage Registration",
     icon: CreditCard,
-    path: "/admin/class-schedules",
+    path: "/admin/class-registrations",
   },
   {
     title: "View Enquires",

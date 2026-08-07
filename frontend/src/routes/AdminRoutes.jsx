@@ -6,6 +6,7 @@ import ManagePlans from "../pages/admin/ManagePlans";
 import ManageTrainers from "../pages/admin/ManageTrainers";
 
 import EmptyState from "../components/common/EmptyState";
+import ManageSchedules from "../pages/admin/ManageSchedules";
 
 const AdminRoutes = [
   {
@@ -27,6 +28,10 @@ const AdminRoutes = [
       {
         path: "trainers",
         element: <ManageTrainers />
+      },
+      {
+        path: "class-schedules",
+        element: <ManageSchedules />
       }
     ],
   },

@@ -7,7 +7,7 @@ import TrainerForm from "../../components/form/TrainerForm";
 
 import PageHeader from "../../components/common/PageHeader";
 import SearchInput from "../../components/common/SearchInput";
-import ConfirmModel from "../../components/common/ConfirmModel";
+import ConfirmModel from "../../components/common/ConfirmModal";
 
 const ManageTrainers = () => {
   const [trainers, setTrainers] = useState([]);

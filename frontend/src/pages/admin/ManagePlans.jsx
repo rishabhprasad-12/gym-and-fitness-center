@@ -12,7 +12,9 @@ import PageHeader from "../../components/common/PageHeader";
 import SearchInput from "../../components/common/SearchInput";
 import MembershipPlanTable from "../../components/membership/MembershipPlanTable";
 import MembershipPlanForm from "../../components/form/MembershipPlanForm";
-import ConfirmModel from "../../components/common/ConfirmModel";
+import ConfirmModel from "../../components/common/ConfirmModal";
+
+import toast from "react-hot-toast";
 
 const ManagePlans = () => {
   const [plans, setPlans] = useState([]);
@@ -28,8 +30,8 @@ const ManagePlans = () => {
       setLoading(true);
       const response = await getMembershipPlans();
       setPlans(response.data);
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
     } finally {
       setLoading(false);
     }
@@ -66,13 +68,14 @@ const ManagePlans = () => {
 
       const token = localStorage.getItem("token");
 
-      await deleteMembershipPlan(selectedPlan._id, token);
+      const response = await deleteMembershipPlan(selectedPlan._id, token);
 
       await fetchPlans();
-
       closeModals();
+
+      toast.success(response.message);
     } catch (error) {
-      console.error(error);
+      toast.error(error.response?.data?.message);
     } finally {
       setDeleteLoading(false);
     }

@@ -5,6 +5,7 @@ import {
   createMembershipPlan,
   updateMembershipPlan,
 } from "../../services/membershipPlan.service";
+import toast from "react-hot-toast";
 
 const availableFeatures = [
   "Gym Access",
@@ -97,15 +98,14 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
      } else {
        response = await createMembershipPlan(payload, token);
      }
-
-     console.log(response);
-
      setFormData(initialState);
 
      onSuccess();
      onClose();
+
+     toast.success(response.message);
    } catch (error) {
-     console.error(error.response?.data);
+     toast.error(error.response?.data?.message);
    } finally {
      setLoading(false);
    }
