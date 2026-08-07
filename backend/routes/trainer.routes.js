@@ -1,4 +1,6 @@
 import express from "express";
+import upload from "../middleware/multer.middleware.js";
+
 import {
   createTrainer,
   deleteTrainer,
@@ -14,12 +16,22 @@ const router = express.Router();
 router
   .route("/")
   .get(getAllTrainers)
-  .post(authMiddleware, authorize("admin"), createTrainer);
+  .post(
+    authMiddleware,
+    authorize("admin"),
+    upload.single("image"),
+    createTrainer,
+  );
 
 router
   .route("/:id")
   .get(getTrainerById)
-  .put(authMiddleware, authorize("admin"), updateTrainer)
+  .put(
+    authMiddleware,
+    authorize("admin"),
+    upload.single("image"),
+    updateTrainer,
+  )
   .delete(authMiddleware, authorize("admin"), deleteTrainer);
 
 export default router;

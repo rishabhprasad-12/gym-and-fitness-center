@@ -38,9 +38,8 @@ export const createClassSchedule = asyncHandler(async (req, res) => {
   const {
     className,
     trainer,
-    dayOfWeek,
+    day,
     startTime,
-    endTime,
     duration,
     capacity,
     location,
@@ -50,9 +49,8 @@ export const createClassSchedule = asyncHandler(async (req, res) => {
   if (
     !className ||
     !trainer ||
-    !dayOfWeek ||
+    !day ||
     !startTime ||
-    !endTime ||
     !capacity
   ) {
     throw new ApiError(400, "All required fields must be provided");
@@ -67,9 +65,8 @@ export const createClassSchedule = asyncHandler(async (req, res) => {
   const classSchedule = await ClassSchedule.create({
     className,
     trainer,
-    dayOfWeek,
+    day,
     startTime,
-    endTime,
     duration,
     capacity,
     location,

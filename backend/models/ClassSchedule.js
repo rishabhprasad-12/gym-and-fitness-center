@@ -14,7 +14,7 @@ const classScheduleSchema = new mongoose.Schema(
       required: true,
     },
 
-    dayOfWeek: {
+    day: {
       type: String,
       required: true,
       enum: [
@@ -29,11 +29,6 @@ const classScheduleSchema = new mongoose.Schema(
     },
 
     startTime: {
-      type: String,
-      required: true,
-    },
-
-    endTime: {
       type: String,
       required: true,
     },

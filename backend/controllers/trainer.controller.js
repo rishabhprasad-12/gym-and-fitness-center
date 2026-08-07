@@ -27,6 +27,7 @@ export const getTrainerById = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, "Trainer fetched successfully", trainer));
 });
 
+// create trainer
 export const createTrainer = asyncHandler(async (req, res) => {
   const {
     name,
@@ -36,8 +37,9 @@ export const createTrainer = asyncHandler(async (req, res) => {
     experience,
     qualification,
     bio,
-    image,
   } = req.body;
+
+  const image = req.file;
 
   if (!name || !specialization || experience === undefined) {
     throw new ApiError(400, "Name, specialization and experience are required");
