@@ -1,4 +1,5 @@
 import MembershipPlanRow from "./MembershipPlanRow";
+import EmptyState from "../common/EmptyState";
 
 const MembershipPlanTable = ({ plans, loading, onEdit, onDelete }) => {
   // Loading State
@@ -20,13 +21,12 @@ const MembershipPlanTable = ({ plans, loading, onEdit, onDelete }) => {
   // Empty State
   if (!plans.length) {
     return (
-      <div className="rounded-3xl border border-dashed border-zinc-700 bg-zinc-900 py-20 text-center">
-        <h3 className="text-xl font-semibold text-white">
-          No Membership Plans Found
-        </h3>
-
-        <p className="mt-2 text-zinc-400">Create your first membership plan.</p>
-      </div>
+      <EmptyState
+        title="No Membership Plans"
+        description="Create your first membership plan."
+        buttonText="Add Plan"
+        onClick={handleOpenModal}
+      />
     );
   }
 

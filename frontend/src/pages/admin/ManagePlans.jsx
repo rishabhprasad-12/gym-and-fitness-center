@@ -12,7 +12,7 @@ import PageHeader from "../../components/common/PageHeader";
 import SearchInput from "../../components/common/SearchInput";
 import MembershipPlanTable from "../../components/membership/MembershipPlanTable";
 import MembershipPlanForm from "../../components/form/MembershipPlanForm";
-import ConfirmModal from "../../components/common/ConfirmModel";
+import ConfirmModel from "../../components/common/ConfirmModel";
 
 const ManagePlans = () => {
   const [plans, setPlans] = useState([]);
@@ -109,14 +109,14 @@ const ManagePlans = () => {
       />
 
       <MembershipPlanForm
-        key={selectedPlan?._id || "new"}
+        key={selectedPlan}
         plan={selectedPlan}
         isOpen={isFormOpen}
         onClose={closeModals}
         onSuccess={fetchPlans}
       />
 
-      <ConfirmModal
+      <ConfirmModel
         isOpen={isDeleteOpen}
         title="Delete Membership Plan"
         description={`Are you sure you want to delete "${selectedPlan?.title}"? This action cannot be undone.`}

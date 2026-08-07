@@ -48,22 +48,27 @@ export const adminSidebarMenu = [
   {
     title: "Manage Plans",
     icon: NotebookPen,
-    path: "/admin/manage-plans",
+    path: "/admin/membership-plans",
   },
   {
     title: "Manage Trainers",
     icon: IdCardLanyard,
-    path: "/dashboard/manege-trainers",
+    path: "/admin/trainers",
   },
   {
-    title: "Manage Schedule",
+    title: "Manage Schedules",
     icon: CalendarDays,
-    path: "/dashboard/menage-schedule",
+    path: "/admin/class-schedules",
+  },
+  {
+    title: "Manage Registration",
+    icon: CreditCard,
+    path: "/admin/class-schedules",
   },
   {
     title: "View Enquires",
     icon: CircleQuestionMark,
-    path: "/dashboard/view-enquires",
+    path: "/admin/enquires",
   },
 ];
  
