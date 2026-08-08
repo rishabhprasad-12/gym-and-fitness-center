@@ -8,6 +8,7 @@ import ManageTrainers from "../pages/admin/ManageTrainers";
 // import EmptyState from "../components/common/EmptyState";
 import ManageSchedules from "../pages/admin/ManageSchedules";
 import ManageRegistrations from "../pages/admin/ManageRegistrations";
+import ManageEnquiries from "../pages/admin/ManageEnquiries";
 
 const AdminRoutes = [
   {
@@ -37,6 +38,10 @@ const AdminRoutes = [
       {
         path: "membership-registrations",
         element: <ManageRegistrations />
+      }, 
+      {
+        path: "enquiries",
+        element: <ManageEnquiries />
       }
     ],
   },

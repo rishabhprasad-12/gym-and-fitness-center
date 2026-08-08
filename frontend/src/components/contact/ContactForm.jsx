@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 
+import { createEnquiry } from "../../services/enquiry.service";
+import toast from "react-hot-toast";
+
+const initialState = {
+  name: "",
+  email: "",
+  phone: "",
+  subject: "",
+  message: "",
+};
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialState);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -17,20 +23,24 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    try {
+      setLoading(true);
 
-    alert("Enquiry submitted successfully!");
+      const response = await createEnquiry(formData);
 
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+      toast.success(response.message || "Enquiry submitted successfully!");
+
+      setFormData(initialState);
+    } catch (error) {
+      console.error(error);
+
+      toast.error(error?.response?.data?.message || "Failed to submit enquiry");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,9 +63,9 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className="mt-8 space-y-5">
         <input
           type="text"
-          name="fullName"
+          name="name"
           placeholder="Full Name"
-          value={formData.fullName}
+          value={formData.name}
           onChange={handleChange}
           className="w-full rounded-xl border border-white/10 bg-zinc-900 px-5 py-4 text-white outline-none transition focus:border-lime-400"
           required

@@ -68,7 +68,7 @@ export const adminSidebarMenu = [
   {
     title: "View Enquires",
     icon: CircleQuestionMark,
-    path: "/admin/enquires",
+    path: "/admin/enquiries",
   },
 ];
  
