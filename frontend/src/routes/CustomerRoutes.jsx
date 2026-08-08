@@ -1,5 +1,6 @@
 import DashboardLayout from "../layouts/DashboardLayout";
-import CustomerDashboard from "../pages/dashboard/CustomerDashboard";
+import CustomerDashboard from "../pages/customer/CustomerDashboard";
+import MyMembership from "../pages/customer/MyMembership";
 import ProtectedRoute from "./ProtectedRoute";
 
 const CustomerRoutes = [
@@ -14,7 +15,11 @@ const CustomerRoutes = [
       {
         index: true,
         element: <CustomerDashboard />,
-      },
+      }, 
+      {
+        path: "my-membership",
+        element: <MyMembership />
+      }
     ],
   },
 ];

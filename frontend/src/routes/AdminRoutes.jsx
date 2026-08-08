@@ -5,8 +5,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import ManagePlans from "../pages/admin/ManagePlans";
 import ManageTrainers from "../pages/admin/ManageTrainers";
 
-import EmptyState from "../components/common/EmptyState";
+// import EmptyState from "../components/common/EmptyState";
 import ManageSchedules from "../pages/admin/ManageSchedules";
+import ManageRegistrations from "../pages/admin/ManageRegistrations";
 
 const AdminRoutes = [
   {
@@ -32,6 +33,10 @@ const AdminRoutes = [
       {
         path: "class-schedules",
         element: <ManageSchedules />
+      },
+      {
+        path: "membership-registrations",
+        element: <ManageRegistrations />
       }
     ],
   },

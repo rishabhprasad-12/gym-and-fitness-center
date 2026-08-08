@@ -8,7 +8,7 @@ import {
   IdCardLanyard,
   CircleQuestionMark,
   Settings,
-  LogOut,
+  // LogOut,
 } from "lucide-react";
 
 export const customerSidebarMenu = [
@@ -25,7 +25,7 @@ export const customerSidebarMenu = [
   {
     title: "Membership",
     icon: CreditCard,
-    path: "/dashboard/membership",
+    path: "/dashboard/my-membership",
   },
   {
     title: "My Classes",
@@ -63,7 +63,7 @@ export const adminSidebarMenu = [
   {
     title: "Manage Registration",
     icon: CreditCard,
-    path: "/admin/class-registrations",
+    path: "/admin/membership-registrations",
   },
   {
     title: "View Enquires",
@@ -73,14 +73,14 @@ export const adminSidebarMenu = [
 ];
  
 export const accountMenu = [
-  {
-    title: "Settings",
-    icon: Settings,
-    path: "/dashboard/settings",
-  },
-  {
-    title: "Logout",
-    icon: LogOut,
-    path: "/auth/login",
-  },
+  // {
+  //   title: "Settings",
+  //   icon: Settings,
+  //   path: "/dashboard/settings",
+  // },
+  // {
+  //   title: "Logout",
+  //   icon: LogOut,
+  //   path: "/auth/login",
+  // },
 ];

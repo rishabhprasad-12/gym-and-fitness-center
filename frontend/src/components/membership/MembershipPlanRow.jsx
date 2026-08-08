@@ -17,7 +17,10 @@ const MembershipPlanRow = ({ plan, onEdit, onDelete }) => {
       </td>
 
       {/* Duration */}
-      <td className="px-6 py-5 text-zinc-300">{plan.duration} Month</td>
+      <td className="px-6 py-5 text-zinc-300">
+        <span>{plan.durationValue} </span>
+        <span>{plan.durationUnit} </span>
+      </td>
 
       {/* Price */}
       <td className="px-6 py-5">

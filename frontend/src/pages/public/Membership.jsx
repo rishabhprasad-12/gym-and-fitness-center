@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Benefits from "../../components/membership/Benefits";
 import ComparisonTable from "../../components/membership/ComparisonTable";
@@ -11,33 +12,75 @@ import toast from "react-hot-toast";
 
 import api from "../../api/axios.js";
 import MembershipPlans from "../../components/membership/MembershipPlans.jsx";
+import MembershipRegistrationForm from "../../components/form/MembershipRegistrationForm.jsx";
 
 const Membership = () => {
-  const [plans, setPlans] = useState([]);
+  const navigation = useNavigate();
 
-  const fetchPlans = async (e) => {
+  const [plans, setPlans] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
+  const [user, setUser] = useState(null);
+
+  const fetchPlans = async () => {
     try {
+      setLoading(true);
+
       const response = await getMembershipPlans();
       setPlans(response.data);
-      console.log(response.message);
-    } catch (err) {
-      console.error(err);
-      // toast.error(err.response?.message?.data);
+    } catch (error) {
+      console.error(error);
+      toast.error(
+        error.response?.data?.message || "Unable to load membership plans.",
+      );
     }
   };
 
   useEffect(() => {
     fetchPlans();
   }, []);
-  
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+
+    if (user) {
+      try {
+        setUser(JSON.parse(user));
+      } catch (error) {
+        toast.error("Invalid user data");
+      }
+    }
+  }, []);
+
   return (
     <div>
       <Hero />
-      <MembershipPlans plans={plans} />
+      <MembershipPlans
+        plans={plans}
+        setSelectedPlan={setSelectedPlan}
+        formOpen={() => setIsRegistrationOpen(true)}
+      />
       <Benefits />
       <ComparisonTable />
       <FAQ />
       <CTA />
+
+      <MembershipRegistrationForm
+        plan={selectedPlan}
+        user={user}
+        isOpen={isRegistrationOpen}
+        onClose={() => {
+          setIsRegistrationOpen(false);
+          setSelectedPlan(null);
+        }}
+        onSuccess={() => {
+          setIsRegistrationOpen(false);
+          setSelectedPlan(null);
+        }}
+      />
     </div>
   );
 };

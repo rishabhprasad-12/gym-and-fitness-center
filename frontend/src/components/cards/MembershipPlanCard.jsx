@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, X, ArrowRight } from "lucide-react";
 
-const PricingCard = ({ plan }) => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  
+const MembershipPlanCard = ({ plan, onJoin }) => {  
   return (
     <div
       className={`relative flex h-full flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 ${
@@ -55,19 +53,19 @@ const PricingCard = ({ plan }) => {
       </ul>
 
       {/* Button */}
-      <Link
-        to="/register"
+      <div
         className={`mt-10 flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold transition ${
-          plan.popular
+          plan.isPopular
             ? "bg-lime-400 text-black hover:bg-lime-500"
             : "border border-white/10 text-white hover:border-lime-400 hover:text-lime-400"
         }`}
+        onClick={onJoin}
       >
         Join Now
         <ArrowRight size={18} />
-      </Link>
+      </div>
     </div>
   );
 };
 
-export default PricingCard;
+export default MembershipPlanCard;

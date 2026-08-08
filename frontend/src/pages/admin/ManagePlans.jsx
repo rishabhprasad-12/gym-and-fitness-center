@@ -41,9 +41,9 @@ const ManagePlans = () => {
     fetchPlans();
   }, []);
 
-  const filterPlans = plans.filter((plan) => {
-    plan.title.toLowerCase().includes(search.toLowerCase());
-  });
+  const filterPlans = plans.filter((plan) => 
+    plan.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   const handleAdd = () => {
     setSelectedPlan(null);

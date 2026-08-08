@@ -6,7 +6,7 @@ import Contact from "../pages/public/Contact";
 import Membership from "../pages/public/Membership";
 import Schedule from "../pages/public/Schedule";
 import Trainers from "../pages/public/Trainers";
-import Dashboard from "../pages/dashboard/CustomerDashboard";
+import Dashboard from "../pages/customer/CustomerDashboard";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 import AdminDashboard from "../pages/admin/AdminDashboard";

@@ -1,6 +1,8 @@
-import { Dumbbell } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Dumbbell, LogOut } from "lucide-react";
 
 import SidebarItem from "../dashboard/SidebarItem";
+import toast from "react-hot-toast";
 
 import {
   customerSidebarMenu,
@@ -9,7 +11,22 @@ import {
 } from "../../data/dashboard/sidebarMenu";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogout = async () => {
+    try {
+      localStorage.removeItem("token");
+
+      navigate("/auth/login");
+
+      toast.success("You logged out successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response?.data?.message);
+    }
+  };
+
   return (
     <aside className="sticky top-0 hidden h-screen overflow-y-auto hide-scrollbar w-64 border-r border-zinc-800 bg-zinc-900 lg:flex lg:flex-col">
       {/* Logo */}
@@ -50,6 +67,17 @@ const Sidebar = () => {
         {accountMenu.map((item) => (
           <SidebarItem key={item.title} item={item} />
         ))}
+
+        {/* Logout Button */}
+        <div>
+          <button
+            onClick={handleLogout}
+            className="flex w-full items-center gap-3 rounded-2xl px-4 py-3 font-medium text-red-400 hover:bg-zinc-800 transition-colors cursor-pointer"
+          >
+            <LogOut size={24} />
+            <span>Logout</span>
+          </button>
+        </div>
       </div>
     </aside>
   );

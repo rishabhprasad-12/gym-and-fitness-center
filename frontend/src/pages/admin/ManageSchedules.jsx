@@ -107,7 +107,7 @@ const ManageSchedules = () => {
       <PageHeader
         title="Class Schedule"
         description="Manage all gym class schedules."
-        buttonText="Add Class"
+        buttonText="Add Classes"
         onButtonClick={handleAdd}
       />
 

@@ -18,10 +18,18 @@ const availableFeatures = [
   "Priority Support",
 ];
 
+const durationUnits = [
+  "Days",
+  "Weeks",
+  "Month",
+  "Year",
+];
+
 const initialState = {
   title: "",
   price: "",
-  duration: "",
+  durationValue: "",
+  durationUnit: "Month",
   description: "",
   isPopular: false,
   features: [],
@@ -39,9 +47,10 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
       setFormData({
         title: plan.title || "",
         price: plan.price || "",
-        duration: plan.duration || "",
+        durationValue: plan.durationValue || "",
+        durationUnit: plan.durationUnit || "Month",
         description: plan.description || "",
-        popular: plan.isPopular || false,
+        isPopular: plan.isPopular || false,
 
         features: plan.features
           ? plan.features.map((feature) => feature.name)
@@ -57,7 +66,7 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
 
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" && name === "popular" ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -81,10 +90,10 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
      const payload = {
        title: formData.title,
        price: Number(formData.price),
-       duration: Number(formData.duration),
+       durationValue: Number(formData.durationValue),
+       durationUnit: formData.durationUnit,
        description: formData.description,
-       isPopular: formData.popular,
-
+       isPopular: formData.isPopular,
        features: formData.features.map((feature) => ({
          name: feature,
          available: true,
@@ -172,13 +181,30 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
                   Duration
                 </label>
 
-                <input
-                  type="number"
-                  name="duration"
-                  value={formData.duration}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white"
-                />
+                <div className="grid grid-cols-2 gap-3">
+                  <input
+                    type="number"
+                    min="1"
+                    name="durationValue"
+                    value={formData.durationValue}
+                    onChange={handleChange}
+                    placeholder="3"
+                    className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white outline-none focus:border-lime-400"
+                  />
+
+                  <select
+                    name="durationUnit"
+                    value={formData.durationUnit}
+                    onChange={handleChange}
+                    className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white outline-none focus:border-lime-400"
+                  >
+                    {durationUnits.map((unit) => (
+                      <option key={unit} value={unit}>
+                        {unit}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -240,19 +266,19 @@ const MembershipPlanForm = ({ plan, isOpen, onClose, onSuccess }) => {
               <input
                 type="checkbox"
                 className="hidden"
-                name="popular"
-                checked={formData.popular}
+                name="isPopular"
+                checked={formData.isPopular}
                 onChange={handleChange}
               />
               <div
                 className={`flex h-5 w-5 items-center justify-center rounded border
                       ${
-                        formData.popular
+                        formData.isPopular
                           ? "border-lime-400 bg-lime-400"
                           : "border-zinc-500"
                       }`}
               >
-                {formData.popular && (
+                {formData.isPopular && (
                   <span className="text-xs font-bold text-black">✓</span>
                 )}
               </div>
