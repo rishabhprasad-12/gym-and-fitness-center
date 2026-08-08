@@ -39,7 +39,7 @@ const LoginForm = () => {
       const role = response.data.user.role;
 
       if (role === "customer") {
-        navigate("/dashboard");
+        navigate("/customer/dashboard");
       } else {
         navigate("/admin/dashboard");
       }

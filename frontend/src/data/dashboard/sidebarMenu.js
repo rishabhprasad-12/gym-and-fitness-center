@@ -15,27 +15,27 @@ export const customerSidebarMenu = [
   {
     title: "Dashboard",
     icon: LayoutDashboard,
-    path: "/dashboard",
+    path: "/customer/dashboard",
   },
   {
     title: "My Profile",
     icon: User,
-    path: "/dashboard/profile",
+    path: "/customer/profile",
   },
   {
     title: "Membership",
     icon: CreditCard,
-    path: "/dashboard/my-membership",
+    path: "/customer/my-membership",
   },
   {
     title: "My Classes",
     icon: CalendarDays,
-    path: "/dashboard/classes",
+    path: "/customer/classes",
   },
   {
     title: "Support",
     icon: MessageSquare,
-    path: "/dashboard/support",
+    path: "/customer/support",
   },
 ];
 
