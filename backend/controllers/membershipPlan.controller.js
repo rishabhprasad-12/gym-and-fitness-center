@@ -31,10 +31,10 @@ export const getMembershipPlanById = asyncHandler(async (req, res) => {
 
 // create membership plan
 export const createMembershipPlan = asyncHandler(async (req, res) => {
-  const { title, duration, price, features, description, isPopular, isActive } =
+  const { title, durationValue, durationUnit, price, features, description, isPopular, isActive } =
     req.body;
 
-  if (!title || !duration || !price) {
+  if (!title || !durationValue || !durationUnit || !price) {
     throw new ApiError(400, "Title, duration and price are required");
   }
 
@@ -48,7 +48,8 @@ export const createMembershipPlan = asyncHandler(async (req, res) => {
 
   const membershipPlan = await MembershipPlan.create({
     title,
-    duration,
+    durationValue,
+    durationUnit,
     price,
     features,
     description,

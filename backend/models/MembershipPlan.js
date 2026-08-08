@@ -29,10 +29,15 @@ const membershipPlanSchema = new mongoose.Schema(
       min: 0,
     },
 
-    duration: {
+    durationValue: {
       type: Number,
       required: true,
       min: 1,
+    },
+
+    durationUnit: {
+      type: String, 
+      required: true,
     },
 
     features: [featureSchema],
