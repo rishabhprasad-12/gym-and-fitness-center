@@ -1,8 +1,15 @@
-import mongoose from "mongoose";
 import { ENQUIRY_STATUS } from "../utils/constants.js";
+
+import mongoose from "mongoose";
 
 const enquirySchema = new mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      default: null,
+    },
+
     name: {
       type: String,
       required: true,
@@ -13,13 +20,12 @@ const enquirySchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      lowercase: true,
     },
 
     phone: {
       type: String,
-      trim: true,
       default: "",
+      trim: true,
     },
 
     subject: {
@@ -37,7 +43,12 @@ const enquirySchema = new mongoose.Schema(
     status: {
       type: String,
       enum: ENQUIRY_STATUS,
-      default: "pending",
+      default: "Pending",
+    },
+
+    notes: {
+      type: String,
+      default: "",
     },
   },
   {
@@ -45,4 +56,6 @@ const enquirySchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.model("Enquiry", enquirySchema);
+const Enquiry = mongoose.model("Enquiry", enquirySchema);
+
+export default Enquiry;

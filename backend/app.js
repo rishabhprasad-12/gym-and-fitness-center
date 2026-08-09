@@ -29,7 +29,7 @@ app.use("/api/membership-plans", membershipPlanRoutes);
 app.use("/api/trainers", trainerRoutes);
 app.use("/api/class-schedules", classScheduleRoutes);
 app.use("/api/membership-registrations", membershipRegistrationRoutes)
-app.use("/api/enquires", enquiryRoutes)
+app.use("/api/enquiries", enquiryRoutes)
 
 app.use(errorMiddleware);
 

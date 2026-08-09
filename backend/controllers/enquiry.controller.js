@@ -1,4 +1,5 @@
 import Enquiry from "../models/Enquiry.js";
+import User from "../models/User.js";
 
 import asyncHandler from "../middleware/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
@@ -26,6 +27,17 @@ export const getEnquiryById = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, "Enquiry fetched successfully", enquiry));
 });
 
+// get my enquiries
+export const getMyEnquiries = asyncHandler(async (req, res) => {
+  const enquires = await Enquiry.find({
+    user: req.user.id,
+  }).sort({ createdAt: -1 });
+
+  res
+    .status(200)
+    .json(new ApiResponse(200, "My enquires fetched successfully", enquires));
+});
+
 // create enquiry
 export const createEnquiry = asyncHandler(async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
@@ -41,6 +53,45 @@ export const createEnquiry = asyncHandler(async (req, res) => {
     subject,
     message,
   });
+
+  res
+    .status(201)
+    .json(new ApiResponse(201, "Enquiry submitted successfully", enquiry));
+});
+
+// create customer enquiry
+export const createCustomerEnquiry = asyncHandler(async (req, res) => {
+  const { subject, message } = req.body;
+
+  if (!subject || !message) {
+    throw new ApiError(400, "Subject and message are required");
+  }
+
+  // authMiddleware already provides the logged-in user
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  const fallbackName =
+    user.fullName ||
+    user.name ||
+    (user.email ? user.email.split("@")[0] : "User");
+
+  const enquiryData = {
+    user: user._id,
+    name: fallbackName,
+    email: user.email,
+    phone: user.phone || "",
+    subject,
+    message,
+    status: "Pending",
+  };
+
+  console.log("FINAL ENQUIRY DATA:", enquiryData);
+
+  const enquiry = await Enquiry.create(enquiryData);
 
   res
     .status(201)
