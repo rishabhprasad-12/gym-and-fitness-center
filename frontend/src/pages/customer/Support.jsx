@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { MessageSquare, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import toast from "react-hot-toast";
 
-import { createEnquiry } from "../../services/enquiry.service";
+import {
+  createCustomerEnquiry,
+  getMyEnquiries,
+} from "../../services/enquiry.service";
 
 const initialState = {
-  fullName: "",
-  email: "",
-  phone: "",
   subject: "",
   message: "",
 };
@@ -20,25 +20,27 @@ const Support = () => {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
-//   const fetchEnquiries = async () => {
-//     try {
-//       setLoading(true);
+  const fetchEnquiries = async () => {
+    try {
+      setLoading(true);
 
-//       const response = await getMyEnquiries();
+      const token = localStorage.getItem("token");
 
-//       setEnquiries(response.data || []);
-//     } catch (error) {
-//       console.error(error);
+      const response = await getMyEnquiries(token);
 
-//       toast.error(error?.response?.data?.message || "Failed to load enquiries");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+      setEnquiries(response.data);
+    } catch (error) {
+      console.error(error);
 
-//   useEffect(() => {
-//     fetchEnquiries();
-//   }, []);
+      toast.error(error?.response?.data?.message || "Failed to load enquiries");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchEnquiries();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +57,9 @@ const Support = () => {
     try {
       setSubmitting(true);
 
-      const response = await createEnquiry(formData);
+      const token = localStorage.getItem("token");
+
+      const response = await createCustomerEnquiry(formData, token);
 
       toast.success(response.message || "Your enquiry has been submitted");
 

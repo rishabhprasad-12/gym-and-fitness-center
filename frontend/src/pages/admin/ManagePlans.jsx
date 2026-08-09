@@ -105,7 +105,7 @@ const ManagePlans = () => {
       />
 
       <MembershipPlanTable
-        plans={plans}
+        plans={filterPlans}
         loading={loading}
         onEdit={handleEdit}
         onDelete={handleDelete}

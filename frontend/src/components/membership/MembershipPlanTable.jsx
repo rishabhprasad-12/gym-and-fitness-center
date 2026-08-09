@@ -21,12 +21,17 @@ const MembershipPlanTable = ({ plans, loading, onEdit, onDelete }) => {
   // Empty State
   if (!plans.length) {
     return (
-      <EmptyState
-        title="No Membership Plans"
-        description="Create your first membership plan."
-        buttonText="Add Plan"
-        onClick={handleOpenModal}
-      />
+      <div className="rounded-2xl border border-zinc-800 bg-zinc-900">
+        <div className="flex min-h-[300px] flex-col items-center justify-center px-6 text-center">
+          <h3 className="text-lg font-semibold text-white">
+            No Membership Plan Found
+          </h3>
+
+          <p className="mt-2 text-sm text-zinc-500">
+            There are no membership plan yet.
+          </p>
+        </div>
+      </div>
     );
   }
 

@@ -16,9 +16,26 @@ export const getEnquiry = async (id, token) => {
   return response.data;
 };
 
+export const getMyEnquiries = async (token) => {
+  const response = await api.get("/enquiries/my", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
 export const createEnquiry = async (data) => {
   const response = await api.post("/enquiries", data);
+  return response.data;
+};
 
+export const createCustomerEnquiry = async (data, token) => {
+  const response = await api.post("/enquiries/my", data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return response.data;
 };
 
