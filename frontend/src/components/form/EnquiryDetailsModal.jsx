@@ -156,11 +156,7 @@ const EnquiryDetailsModal = ({ enquiry, isOpen, onClose, onSuccess }) => {
               >
                 <option value="Pending">Pending</option>
 
-                <option value="In Progress">In Progress</option>
-
                 <option value="Resolved">Resolved</option>
-
-                <option value="Closed">Closed</option>
               </select>
             </div>
 
