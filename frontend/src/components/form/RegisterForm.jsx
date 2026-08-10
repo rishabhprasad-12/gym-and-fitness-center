@@ -62,7 +62,7 @@ const RegisterForm = () => {
       const response = await registerUser(formData);
       localStorage.setItem("token", response.data.token);
       toast.success(response.message);
-      navigate("/dashboard");
+      navigate("/customer/dashboard");
     } catch (err) {
       toast.error(err.response?.data?.message);
     }
