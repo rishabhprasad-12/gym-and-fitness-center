@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 // import adminImage from "../../assets/images/dashboard/admin-banner.png";
 
-const WelcomeBanner = () => {
+const WelcomeBanner = ({ name = "Administrator" }) => {
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-zinc-800 bg-zinc-900">
       {/* Background Glow */}
@@ -19,7 +19,7 @@ const WelcomeBanner = () => {
 
           <h1 className="mt-6 text-4xl font-bold leading-tight text-white lg:text-5xl">
             Welcome Back,
-            <span className="block text-lime-400">Administrator</span>
+            <span className="block text-lime-400">{name}</span>
           </h1>
 
           <p className="mt-6 max-w-xl leading-8 text-zinc-400">
@@ -29,7 +29,7 @@ const WelcomeBanner = () => {
           </p>
 
           <Link
-            to="/dashboard/admin/memberships"
+            to="/admin/membership-plans"
             className="mt-8 inline-flex items-center gap-2 rounded-xl bg-lime-400 px-6 py-3 font-semibold text-black transition hover:bg-lime-500"
           >
             Manage Memberships

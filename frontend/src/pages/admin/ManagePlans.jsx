@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 
 import {
   getMembershipPlans,
-  getMembershipPlan,
-  createMembershipPlan,
-  updateMembershipPlan,
   deleteMembershipPlan,
 } from "../../services/membershipPlan.service";
 

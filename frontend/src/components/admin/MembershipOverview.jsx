@@ -1,10 +1,9 @@
 import { Users } from "lucide-react";
-import { membershipOverview } from "../../data/admin-dashboard/membershipOverview";
 import PlanProgress from "./PlanProgress";
 
-const MembershipOverview = () => {
-  const totalMembers = membershipOverview.reduce(
-    (sum, plan) => sum + plan.members,
+const MembershipOverview = ({ plans = [] }) => {
+  const totalMembers = plans.reduce(
+    (sum, plan) => sum + Number(plan.members || 0),
     0,
   );
 
@@ -24,8 +23,6 @@ const MembershipOverview = () => {
         </div>
       </div>
 
-      {/* Total Members */}
-
       <div className="mb-8 rounded-2xl border border-lime-400/20 bg-lime-400/5 p-6">
         <p className="text-sm text-zinc-400">Total Active Members</p>
 
@@ -33,7 +30,7 @@ const MembershipOverview = () => {
       </div>
 
       <div className="space-y-5">
-        {membershipOverview.map((plan) => (
+        {plans.map((plan) => (
           <PlanProgress key={plan.id} {...plan} />
         ))}
       </div>

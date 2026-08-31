@@ -1,8 +1,8 @@
 import { ChevronRight } from "lucide-react";
-import { upcomingClasses } from "../../data/dashboard/upcomingClasses";
 import ClassItem from "./ClassItem";
+import { Link } from "react-router-dom";
 
-const UpcomingClasses = () => {
+const UpcomingClasses = ({ classes = [] }) => {
   return (
     <section className="mt-8 rounded-[32px] border border-zinc-800 bg-zinc-900 p-7">
       <div className="mb-8 flex items-center justify-between">
@@ -12,14 +12,17 @@ const UpcomingClasses = () => {
           <p className="mt-2 text-zinc-400">Your next scheduled workouts.</p>
         </div>
 
-        <button className="flex items-center gap-2 text-lime-400 hover:text-lime-300">
+        <Link
+          to="/customer/classes"
+          className="flex items-center gap-2 text-lime-400 hover:text-lime-300"
+        >
           View All
           <ChevronRight size={18} />
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-5">
-        {upcomingClasses.map((item) => (
+        {classes.map((item) => (
           <ClassItem key={item.id} item={item} />
         ))}
       </div>

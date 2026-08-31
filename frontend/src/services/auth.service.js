@@ -11,11 +11,11 @@ export const loginUser = async (userData) => {
 };
 
 export const getProfile = async (token) => {
-    const response = await api.get('/auth/profile', {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
+  const response = await api.get("/auth/profile", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-    return response.data;
-}
+  return response.data;
+};

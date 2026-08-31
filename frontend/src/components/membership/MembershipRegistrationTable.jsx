@@ -79,8 +79,8 @@ const MembershipRegistrationTable = ({
 
   return (
     <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[1000px] text-left">
+      <div className="overflow-x-auto pb-2">
+        <table className="w-full min-w-[760px] text-left sm:min-w-[900px]">
           <thead className="border-b border-zinc-800 bg-zinc-950">
             <tr>
               <th className="px-5 py-4 text-xs font-medium uppercase tracking-wide text-zinc-500">

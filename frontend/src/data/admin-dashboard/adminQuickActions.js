@@ -6,7 +6,7 @@ export const adminQuickActions = [
     title: "Manage Memberships",
     description: "Create, update and remove membership plans.",
     icon: CreditCard,
-    path: "/admin/memberships",
+    path: "/admin/membership-plans",
     color: "bg-lime-400/10 text-lime-400",
   },
   {
@@ -22,7 +22,7 @@ export const adminQuickActions = [
     title: "Manage Schedule",
     description: "Edit weekly classes and timings.",
     icon: CalendarDays,
-    path: "/admin/schedule",
+    path: "/admin/class-schedules",
     color: "bg-orange-400/10 text-orange-400",
   },
   {

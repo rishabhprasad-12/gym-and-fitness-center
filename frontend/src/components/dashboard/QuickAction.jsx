@@ -1,24 +1,27 @@
 import {
   CalendarPlus,
-  CreditCard,
   CalendarDays,
   MessageCircle,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const actions = [
   {
     title: "Book a Class",
+    description: "Reserve your spot in a class",
     icon: CalendarPlus,
     to: "/schedule",
   },
   {
     title: "View Schedule",
+    description: "Check upcoming classes",
     icon: CalendarDays,
     to: "/schedule",
   },
   {
     title: "Contact Trainer",
+    description: "Get in touch with a trainer",
     icon: MessageCircle,
     to: "/contact",
   },
@@ -26,10 +29,20 @@ const actions = [
 
 const QuickActions = () => {
   return (
-    <div className="rounded-[32px] border border-zinc-800 bg-zinc-900 p-7">
-      <h2 className="text-xl font-bold text-white">Quick Actions</h2>
+    <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-4 sm:rounded-3xl sm:p-6 lg:p-7">
+      {/* Header */}
+      <div>
+        <h2 className="text-lg font-bold text-white sm:text-xl">
+          Quick Actions
+        </h2>
 
-      <div className="mt-6 space-y-4">
+        <p className="mt-1 text-sm text-zinc-500">
+          Manage your fitness activities
+        </p>
+      </div>
+
+      {/* Actions */}
+      <div className="mt-5 grid grid-cols-1 gap-3 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
         {actions.map((action) => {
           const Icon = action.icon;
 
@@ -37,18 +50,33 @@ const QuickActions = () => {
             <Link
               key={action.title}
               to={action.to}
-              className="group flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950 px-5 py-4 transition hover:border-lime-400/40 hover:bg-zinc-900"
+              className="group flex min-w-0 items-center justify-between rounded-xl border border-zinc-800 bg-zinc-950 p-3.5 transition duration-200 hover:border-lime-400/40 hover:bg-zinc-800/60 sm:rounded-2xl sm:p-4"
             >
-              <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-lime-400/10 p-3 transition group-hover:bg-lime-400">
+              {/* Left */}
+              <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-lime-400/10 transition duration-200 group-hover:bg-lime-400 sm:h-11 sm:w-11">
                   <Icon
-                    size={20}
-                    className="text-lime-400 group-hover:text-black"
+                    size={19}
+                    className="text-lime-400 transition group-hover:text-black"
                   />
                 </div>
 
-                <span className="font-medium text-white">{action.title}</span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-white sm:text-base">
+                    {action.title}
+                  </p>
+
+                  <p className="mt-0.5 truncate text-xs text-zinc-500">
+                    {action.description}
+                  </p>
+                </div>
               </div>
+
+              {/* Arrow */}
+              <ArrowRight
+                size={17}
+                className="ml-3 shrink-0 text-zinc-600 transition duration-200 group-hover:translate-x-1 group-hover:text-lime-400"
+              />
             </Link>
           );
         })}

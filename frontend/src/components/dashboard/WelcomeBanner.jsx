@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import heroImage from "../../assets/images/dashboard/customer-banner.png";
 
-const WelcomeBanner = () => {
+const WelcomeBanner = ({ name = "Member" }) => {
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-zinc-800 bg-zinc-900 px-8 py-10">
       {/* Glow */}
@@ -20,7 +20,7 @@ const WelcomeBanner = () => {
 
           <h1 className="mt-5 text-5xl font-bold leading-tight text-white">
             Welcome Back,
-            <span className="block text-lime-400">Rishabh</span>
+            <span className="block text-lime-400">{name}</span>
           </h1>
 
           <p className="mt-6 max-w-xl leading-8 text-zinc-400">
@@ -30,7 +30,7 @@ const WelcomeBanner = () => {
           </p>
 
           <Link
-            to="/dashboard/membership"
+            to="/customer/my-membership"
             className="mt-8 inline-flex items-center gap-2 rounded-xl bg-lime-400 px-6 py-3 font-semibold text-black transition duration-300 hover:scale-105 hover:bg-lime-500"
           >
             View Membership
@@ -40,13 +40,13 @@ const WelcomeBanner = () => {
 
         {/* Right */}
 
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <img
             src={heroImage}
             alt=""
             className="max-h-[420px] object-contain drop-shadow-[0_35px_60px_rgba(132,204,22,.25)]"
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

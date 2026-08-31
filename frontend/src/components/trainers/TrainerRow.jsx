@@ -25,15 +25,15 @@ const TrainerRow = ({ trainer, mobile = false, onEdit, onDelete }) => {
 
         <div className="mt-5 grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p className="text-zinc-500">Experience</p>
-
-            <p className="text-white">{trainer.experience} Years</p>
-          </div>
-
-          <div>
             <p className="text-zinc-500">Qualification</p>
 
             <p className="text-white">{trainer.qualification}</p>
+          </div>
+
+          <div>
+            <p className="text-zinc-500">Experience</p>
+
+            <p className="text-white">{trainer.experience} Years</p>
           </div>
 
           <div>

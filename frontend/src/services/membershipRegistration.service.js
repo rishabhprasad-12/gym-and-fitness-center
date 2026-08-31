@@ -27,6 +27,15 @@ export const getMyMembershipRegistrations = async (token) => {
   return response.data;
 };
 
+export const getCurrentMembershipRegistration = async (token) => {
+  const response = await api.get("/membership-registrations/current", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
+
 export const createMembershipRegistration = async (data, token) => {
   const response = await api.post("/membership-registrations", data, {
     headers: {

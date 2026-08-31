@@ -174,20 +174,20 @@ const LoginForm = () => {
 
         {/* Divider */}
 
-        <div className="my-8 flex items-center">
+        {/* <div className="my-8 flex items-center">
           <div className="h-px flex-1 bg-white/10" />
 
           <span className="mx-4 text-sm text-zinc-500">OR</span>
 
           <div className="h-px flex-1 bg-white/10" />
-        </div>
+        </div> */}
 
         {/* Google */}
 
-        <button className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white py-4 font-medium text-black transition hover:bg-zinc-100">
-          {/* <Chrome size={20} /> */}
+        {/* <button className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white py-4 font-medium text-black transition hover:bg-zinc-100">
+          <Chrome size={20} />
           Continue with Google
-        </button>
+        </button> */}
 
         {/* Register */}
 

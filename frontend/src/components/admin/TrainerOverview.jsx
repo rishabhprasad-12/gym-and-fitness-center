@@ -1,10 +1,10 @@
 import { ArrowRight } from "lucide-react";
 
-import { trainerOverview, featuredTrainers } from "../../data/admin-dashboard/trainerOverview";
-
 import TrainerOverviewCard from "./TrainerOverviewCard";
+import { Link } from "react-router-dom";
 
-const TrainerOverview = () => {
+const TrainerOverview = ({ trainerOverview = [], featuredTrainers = [] }) => {
+  console.log(trainerOverview, featuredTrainers);
   return (
     <section className="rounded-[32px] border border-zinc-800 bg-zinc-900 p-7">
       <div className="mb-8 flex items-center justify-between">
@@ -16,21 +16,17 @@ const TrainerOverview = () => {
           </p>
         </div>
 
-        <button className="flex items-center gap-2 text-sm font-medium text-lime-400 hover:text-lime-300">
+        <Link to="/admin/trainers" className="flex items-center gap-2 text-sm font-medium text-lime-400 hover:text-lime-300">
           View All
           <ArrowRight size={18} />
-        </button>
+        </Link>
       </div>
-
-      {/* Stats */}
 
       <div className="grid gap-5 md:grid-cols-2">
         {trainerOverview.map((item) => (
           <TrainerOverviewCard key={item.id} {...item} />
         ))}
       </div>
-
-      {/* Trainer List */}
 
       <div className="mt-8 border-t border-zinc-800 pt-6">
         <h3 className="mb-5 text-lg font-semibold text-white">Top Trainers</h3>

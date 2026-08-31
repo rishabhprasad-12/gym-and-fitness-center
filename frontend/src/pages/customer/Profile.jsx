@@ -63,11 +63,13 @@ const Profile = () => {
         <div className="border-b border-zinc-800 bg-zinc-950 px-6 py-8">
           <div className="flex items-center gap-5">
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-lime-400 text-2xl font-bold text-black">
-              {user.name?.charAt(0)?.toUpperCase() || "U"}
+              {(user.fullName || user.name || "U").charAt(0).toUpperCase()}
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-white">{user.name}</h2>
+              <h2 className="text-xl font-bold text-white">
+                {user.fullName || user.name || "User"}
+              </h2>
 
               <p className="mt-1 text-sm text-zinc-500">FitForge Member</p>
             </div>
@@ -77,7 +79,11 @@ const Profile = () => {
         {/* Information */}
 
         <div className="grid grid-cols-1 gap-4 p-6 sm:grid-cols-2">
-          <ProfileItem icon={User} label="Full Name" value={user.name} />
+          <ProfileItem
+            icon={User}
+            label="Full Name"
+            value={user.fullName || user.name}
+          />
 
           <ProfileItem icon={Mail} label="Email" value={user.email} />
 

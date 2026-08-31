@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
-import { recentEnquiries } from "../../data/admin-dashboard/recentEnquiries";
 import EnquiryItem from "./EnquiryItem";
+import { Link } from "react-router-dom";
 
-const RecentEnquiries = () => {
+const RecentEnquiries = ({ enquiries = [] }) => {
   return (
     <section className="rounded-[32px] border border-zinc-800 bg-zinc-900 p-7">
       <div className="mb-8 flex items-center justify-between">
@@ -14,14 +14,17 @@ const RecentEnquiries = () => {
           </p>
         </div>
 
-        <button className="flex items-center gap-2 text-sm font-medium text-lime-400 hover:text-lime-300">
+        <Link
+          to="/admin/enquiries"
+          className="flex items-center gap-2 text-sm font-medium text-lime-400 hover:text-lime-300"
+        >
           View All
           <ArrowRight size={18} />
-        </button>
+        </Link>
       </div>
 
       <div className="space-y-4">
-        {recentEnquiries.map((enquiry) => (
+        {enquiries.map((enquiry) => (
           <EnquiryItem key={enquiry.id} {...enquiry} />
         ))}
       </div>
