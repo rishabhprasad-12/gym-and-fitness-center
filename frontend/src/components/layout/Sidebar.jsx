@@ -22,7 +22,7 @@ const Sidebar = ({ isOpen = false, onClose }) => {
       localStorage.removeItem("user");
 
       onClose?.();
-      navigate("/auth/login");
+      navigate("/");
 
       toast.success("You logged out successfully");
     } catch (error) {

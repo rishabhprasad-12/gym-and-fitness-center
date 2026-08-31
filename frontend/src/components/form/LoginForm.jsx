@@ -73,7 +73,7 @@ const LoginForm = () => {
 
         {/* Stats */}
 
-        <div className="mt-8 grid grid-cols-3 gap-4">
+        {/* <div className="mt-8 grid grid-cols-3 gap-4">
           <div className="rounded-2xl border border-white/10 bg-black/20 p-4 text-center">
             <h3 className="text-2xl font-bold text-lime-400">2500+</h3>
 
@@ -91,7 +91,7 @@ const LoginForm = () => {
 
             <p className="mt-1 text-xs text-zinc-400">Classes</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Form */}
 

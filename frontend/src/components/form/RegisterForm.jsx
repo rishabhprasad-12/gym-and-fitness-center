@@ -85,7 +85,7 @@ const RegisterForm = () => {
 
         {/* Benefits */}
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        {/* <div className="mt-8 flex flex-wrap gap-3">
           <span className="rounded-full bg-lime-400/10 px-3 py-2 text-xs text-lime-400">
             ✓ 2500+ Members
           </span>
@@ -97,7 +97,7 @@ const RegisterForm = () => {
           <span className="rounded-full bg-lime-400/10 px-3 py-2 text-xs text-lime-400">
             ✓ Book Classes
           </span>
-        </div>
+        </div> */}
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-5">
           {/* Full Name */}

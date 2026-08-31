@@ -22,7 +22,7 @@ const Navbar = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsMenuOpen(false);
-    navigate("/auth/login");
+    navigate("/");
   };
 
   return (
